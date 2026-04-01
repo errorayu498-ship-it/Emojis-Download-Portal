@@ -1,27 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Discord Emoji Downloader</title>
+
+<title>Programmed by WarriorTeam</title>
+
 <link rel="stylesheet" href="assets/style.css">
+
 </head>
 
 <body>
 
-<div class="container">
+<div class="main">
 
 <h1>Discord Emoji Downloader</h1>
 
-<div class="searchBox">
-<input id="serverInput" placeholder="Enter Server ID or Invite Link">
-<button onclick="getEmojis()">Get Emojis</button>
+<div class="searchBar">
+
+<input id="serverInput" placeholder="Server Invite Link">
+
+<button onclick="loadServer()">Check Emojis</button>
+
 </div>
 
-<div id="loading" class="loading hidden"></div>
+<div class="progressBox">
+<div id="progressBar"></div>
+</div>
 
-<div id="emojiContainer" class="emoji-grid"></div>
+<div id="serverInfo" class="serverInfo"></div>
 
-<div id="zipBox" class="zipbox hidden">
-<button onclick="downloadZip()">Download All Emojis (ZIP)</button>
+<input
+type="text"
+id="searchEmoji"
+placeholder="Search emoji..."
+onkeyup="filterEmoji()"
+>
+
+<div id="emojiGrid" class="emojiGrid"></div>
+
+<div id="downloadAll" class="downloadAll">
+<button onclick="downloadZip()">Download All</button>
 </div>
 
 </div>
